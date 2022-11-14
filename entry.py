@@ -122,4 +122,4 @@ output = [
     161, 'priority': 0},
     {'id': 12359, 'weight': 2, 'width': 1, 'height': 1, 'length': 10, 'cost':
     135, 'priority': 0},
-    ]
+]

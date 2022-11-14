@@ -7,6 +7,10 @@ class TestReadParagraph(unittest.TestCase):
 
     def test_default_count(self):
         self.assertEqual(read_paragraph('logística', paragraph=txt), 4)
+
+
+    def test_default_count(self):
+        self.assertEqual(read_paragraph('la', paragraph=txt), 6)
     
 
     def test_default_order_by_creiteria(self):

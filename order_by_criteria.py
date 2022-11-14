@@ -45,12 +45,18 @@ def insert_sort_by_id(my_list):
             posicion_actual -= 1
 
         my_list[posicion_actual] = valor_actual
+        
     return my_list
 
 
 # Función principal
 def order_by_criteria(criteria=[('weight', '=', 3)], entry=entry):
+    operators = ['=','>=','<=','<','>']
     if len(criteria) == 1:
+        if criteria[0][1] not in operators:
+            raise ValueError(
+                'No estás usando operadores dentro de tu criterio de ordenamiento'
+                )
         key = criteria[0][0]
         condition = criteria[0][1]
         value = criteria[0][2]
@@ -69,6 +75,11 @@ def order_by_criteria(criteria=[('weight', '=', 3)], entry=entry):
     
     #Preparado para una segunda tupla, en caso de necesitar más, se debe de crear una función incluso con recursividad
     elif len(criteria) == 2:
+        if criteria[0][1] not in operators\
+            or criteria[1][1] not in operators:
+            raise ValueError(
+                'No estás usando operadores dentro de tu criterio de ordenamiento'
+                )
         key = criteria[0][0]
         condition = criteria[0][1]
         value = criteria[0][2]
@@ -93,9 +104,10 @@ def order_by_criteria(criteria=[('weight', '=', 3)], entry=entry):
                 pre_processed_entry1.append(data)
 
         processed_entry1 = insert_sort_by_priority(processed_entry1)
-
         processed_entry = insert_sort_by_priority(processed_entry)
-        return processed_entry1 + pre_processed_entry1 + processed_entry + pre_processed_entry
+        
+        return processed_entry1 + pre_processed_entry1\
+             + processed_entry + pre_processed_entry
 
 
 if __name__ == '__main__':

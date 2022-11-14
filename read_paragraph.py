@@ -12,7 +12,7 @@ txt = """La logística Digital es un \n
 
 def read_paragraph(word='logística', paragraph= txt):
     
-    pattern = re.compile(word)
+    pattern = re.compile(r'\b\{word\}\b)')
     count = len(re.findall(pattern,paragraph))
     print(f'{count} ocurrencias encontradas.')
     return count
