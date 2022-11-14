@@ -35,4 +35,5 @@ Para probar el scrip debes de seguir los siguientes pasos:
 python3 tests.py
 ```
 
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
+## Notas
+Se me hace muy curioso el resultado final en el pdf, espero poder explicarlo en la siguiente reunión.
